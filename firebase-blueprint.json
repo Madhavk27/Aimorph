@@ -1,0 +1,172 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "email": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "handle": { "type": "string", "required": true },
+        "avatar": { "type": "string", "required": false },
+        "tier": { "type": "string", "required": false },
+        "bio": { "type": "string", "required": false },
+        "stats": {
+          "type": "map",
+          "fields": {
+            "created": { "type": "number" },
+            "saved": { "type": "number" },
+            "shared": { "type": "number" }
+          }
+        },
+        "createdAt": { "type": "string", "required": false },
+        "updatedAt": { "type": "string", "required": false }
+      }
+    },
+    "Car": {
+      "collection": "cars",
+      "fields": {
+        "name": { "type": "string", "required": true },
+        "year": { "type": "string", "required": true },
+        "category": { "type": "string", "required": true },
+        "stockImage": { "type": "string", "required": true },
+        "studioImage": { "type": "string", "required": true },
+        "analyzingImage": { "type": "string", "required": false },
+        "customizedImages": { "type": "map", "required": false },
+        "specs": {
+          "type": "map",
+          "fields": {
+            "engine": { "type": "string" },
+            "drivetrain": { "type": "string" },
+            "power": { "type": "string" },
+            "curbWeight": { "type": "string" }
+          }
+        },
+        "isFeatured": { "type": "boolean", "required": false }
+      }
+    },
+    "UserCarUpload": {
+      "collection": "userCarUploads",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "carName": { "type": "string", "required": true },
+        "imageUrl": { "type": "string", "required": true },
+        "detectedModel": { "type": "string", "required": false },
+        "status": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "CustomizationOption": {
+      "collection": "customizationOptions",
+      "fields": {
+        "type": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "finish": { "type": "string", "required": false },
+        "hex": { "type": "string", "required": false },
+        "size": { "type": "string", "required": false },
+        "price": { "type": "number", "required": false },
+        "description": { "type": "string", "required": false },
+        "category": { "type": "string", "required": false }
+      }
+    },
+    "Build": {
+      "collection": "builds",
+      "fields": {
+        "title": { "type": "string", "required": true },
+        "baseModel": { "type": "string", "required": true },
+        "originalImage": { "type": "string", "required": true },
+        "modifiedImage": { "type": "string", "required": true },
+        "videoUrl": { "type": "string", "required": false },
+        "prompt": { "type": "string", "required": false },
+        "config": { "type": "map", "required": true },
+        "summaryItems": { "type": "list", "required": false },
+        "authorId": { "type": "string", "required": true },
+        "authorName": { "type": "string", "required": true },
+        "authorHandle": { "type": "string", "required": false },
+        "authorAvatar": { "type": "string", "required": false },
+        "likes": { "type": "number", "required": false },
+        "commentsCount": { "type": "number", "required": false },
+        "tags": { "type": "list", "required": false },
+        "category": { "type": "string", "required": false },
+        "isPublic": { "type": "boolean", "required": true },
+        "createdAt": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": false }
+      }
+    },
+    "SavedBuild": {
+      "collection": "savedBuilds",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "buildId": { "type": "string", "required": true },
+        "savedAt": { "type": "string", "required": true },
+        "buildSnapshot": { "type": "map", "required": false }
+      }
+    },
+    "CommunityPost": {
+      "collection": "communityPosts",
+      "fields": {
+        "buildId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "authorName": { "type": "string", "required": true },
+        "title": { "type": "string", "required": true },
+        "baseModel": { "type": "string", "required": true },
+        "modifiedImage": { "type": "string", "required": true },
+        "originalImage": { "type": "string", "required": true },
+        "tags": { "type": "list", "required": false },
+        "category": { "type": "string", "required": true },
+        "likes": { "type": "number", "required": false },
+        "commentsCount": { "type": "number", "required": false },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "Like": {
+      "collection": "likes",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "buildId": { "type": "string", "required": true },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "Comment": {
+      "collection": "comments",
+      "fields": {
+        "buildId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "authorName": { "type": "string", "required": true },
+        "authorAvatar": { "type": "string", "required": false },
+        "authorHandle": { "type": "string", "required": false },
+        "text": { "type": "string", "required": true },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "ModificationShop": {
+      "collection": "modificationShops",
+      "fields": {
+        "name": { "type": "string", "required": true },
+        "city": { "type": "string", "required": true },
+        "location": { "type": "string", "required": true },
+        "rating": { "type": "number", "required": true },
+        "reviewCount": { "type": "number", "required": false },
+        "specialties": { "type": "list", "required": true },
+        "verified": { "type": "boolean", "required": true },
+        "phone": { "type": "string", "required": false },
+        "website": { "type": "string", "required": false },
+        "avatar": { "type": "string", "required": false },
+        "coverImage": { "type": "string", "required": false }
+      }
+    },
+    "PartsProduct": {
+      "collection": "partsProducts",
+      "fields": {
+        "name": { "type": "string", "required": true },
+        "brand": { "type": "string", "required": true },
+        "partNumber": { "type": "string", "required": false },
+        "category": { "type": "string", "required": true },
+        "price": { "type": "number", "required": true },
+        "rating": { "type": "number", "required": false },
+        "image": { "type": "string", "required": true },
+        "fitment": { "type": "list", "required": false },
+        "inStock": { "type": "boolean", "required": true },
+        "specDetails": { "type": "string", "required": false }
+      }
+    }
+  }
+}

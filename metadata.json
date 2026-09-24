@@ -1,0 +1,6 @@
+{
+  "name": "AutoMorphAi",
+  "description": "AutoMorph AI — Practical ₹0-cost automotive customization studio powered by Gemini Free Tier, Three.js WebGL 3D interactive geometry, MORPH natural language automotive AI assistant, and Supabase cloud storage & Build DNA architecture.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
